@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App() {
+  const thingsArray = ["Thing 1", "Thing 2"];
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  function addItem() {
+    const newThingText = `Thing ${thingsArray.length + 1}`;
+    thingsArray.push(newThingText);
+    document.getElementById();
+    console.log(thingsArray);
+  }
+
+  const thingsElements = thingsArray.map((thing) => <p key={thing}>{thing}</p>);
+
+  return (
+    <div>
+      <button onClick={addItem}>Add Item</button>
+      {thingsElements}
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
